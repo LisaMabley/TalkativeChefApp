@@ -16,16 +16,21 @@ Lisa:
 
 Kim:
 
-Renee: Sr. Data Scientist at General Mills. PhD in Quantitative Social 
+Renee Murray: Sr. Data Scientist at General Mills. PhD in Quantitative Social 
 Psychology from Iowa State University. Fun Fact: Renee is a volunteer and foster 
 for the Minnesota Companion Rabbit Society. You can find Renee on 
-[LinkedIn](https://www.linkedin.com/in/renee-murray "LinkedIn") and 
-[GitHub](https://github.com/ReneeMurray "GitHub").
+[LinkedIn](https://www.linkedin.com/in/renee-murray "Renee's LinkedIn") and 
+[GitHub](https://github.com/ReneeMurray "Renee's GitHub").
 
-Cynthia:
+Cynthia Vang: Technical support associate at Alarm.com. BA in Information 
+Systems from the University of Wisconsin - Eau Claire. You can find Cynthia on 
+[LinkedIn](https://www.linkedin.com/in/cynthiavang "Cynthia's LinkedIn")
 
 Tracy:
 
-Cara:
+Cara Weggler: Customer Care Representative at When I Work. BA in Environmental 
+Studies from Macalester College. Fun Fact: Cara loves to play her violin and 
+cook! You can find Cara on [LinkedIn](https://www.linkedin.com/in/caraweggler 
+"Cara's LinkedIn") and [GitHub](https://github.com/cweggler "Cara's GitHub")
 
 Anna:

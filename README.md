@@ -12,9 +12,14 @@ Gap event.
 ## About Us:
 Kosi:
 
-Lisa:
+Lisa Mabley: Software Engineer at [ITM TwentyFirst](https://www.itm21st.com/ 
+"ITM TwentyFirst"). Lisa is a graphic designer-turned-coder who loves puzzles of 
+all kinds. You can find Lisa on [LinkedIn](
+https://www.linkedin.com/in/lisamabley "Lisa's LinkedIn") and [GitHub](
+https://github.com/LisaMabley "Lisa's GitHub").
 
-Kim:
+Kim Mai: Business Intelligence Developer at C. H. Robinson. You can find Kim on 
+[LinkedIn](https://www.linkedin.com/in/kmaimn "Kim's LinkedIn")
 
 Renee Murray: Sr. Data Scientist at General Mills. PhD in Quantitative Social 
 Psychology from Iowa State University. Fun Fact: Renee is a volunteer and foster 
@@ -24,9 +29,12 @@ for the Minnesota Companion Rabbit Society. You can find Renee on
 
 Cynthia Vang: Technical support associate at Alarm.com. BA in Information 
 Systems from the University of Wisconsin - Eau Claire. You can find Cynthia on 
-[LinkedIn](https://www.linkedin.com/in/cynthiavang "Cynthia's LinkedIn")
+[LinkedIn](https://www.linkedin.com/in/cynthiavang "Cynthia's LinkedIn").
 
-Tracy:
+Tracy Fuller: Associate Full Stack Software Engineer at Reeher LLC. Fun Fact: Tracy has 
+worked at the MN Renaissance festival for 19 years, and has her own show. The 
+show was voted Best Musical Act of 2016. You can find Tracy on [LinkedIn](
+https://www.linkedin.com/in/tracyefuller "Tracy's LinkedIn")
 
 Cara Weggler: Customer Care Representative at When I Work. BA in Environmental 
 Studies from Macalester College. Fun Fact: Cara loves to play her violin and 

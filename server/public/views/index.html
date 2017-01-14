@@ -10,15 +10,15 @@
 	<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
 
 </head>
-<body class="container-fluid" ng-app='myApp'>
+<body class="container-fluid" ng-app="myApp">
 	<h1>The Talkative Chef<small> the hurr-de-hurr swede</small></h1>
 	<div class="form-group col-xs-8 col-xs-offset-2">
 		<input id="recipeSearchBar" name="recipeSearchBar" placeholder="Type your search here" type="text" class="form-control" />
 		<button class="btn btn-success" ng-click="">Find Recipe!</button>
 
 	</div>
-	<div id="searchResultsContainer" ng-show="results">
-    <div class="search-results" ng-repeat="result in results">
+	<div id="searchResultsContainer">
+    <div class="search-results" ng-repeat="result in results" >
       <img src="{{result.}}" />something
       <h2 class="result-title">{{result.}}</h2>
       <h4 class="result-desc">{{result.}}</h4>

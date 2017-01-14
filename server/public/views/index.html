@@ -15,9 +15,8 @@
 	<h1>The Talkative Chef<small> the hurr-de-hurr swede</small></h1>
 	<div ng-controller="searchController">
 		<div class="form-group col-xs-8 col-xs-offset-2">
-			<input id="recipeSearchBar" name="recipeSearchBar" placeholder="Type your search here" type="text" class="form-control" />
-			<button class="btn btn-success" ng-click="sendRequest()">Find Recipe!</button>
-
+			<input id="recipeSearchField" name="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
+			<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
 		</div>
 		<div id="searchResultsContainer" ng-show="responseReceived">
 	    <div class="search-results" ng-repeat="recipe in recipeList">

@@ -3,8 +3,11 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
 
   $scope.recipeList = [];
 
+  $scope.recipeSearchField = '';
+
   $scope.sendRequest = function() {
-    alert('Nice job clicking, lady!');
+    console.log($scope.recipeSearchField);
+    //alert('Nice job typing, ' + $scope.recipeSearchField + ', lady!');
   }
 
   // var options = {

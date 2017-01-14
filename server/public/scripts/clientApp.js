@@ -1,1 +1,4 @@
-var app = angular.module('myApp',[]);
+
+var myApp = angular.module('myApp', []);
+
+console.log('this works');

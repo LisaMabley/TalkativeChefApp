@@ -13,7 +13,12 @@ accessible, approachable, positive experience. Check out [Hack the Gap](
 http://www.hackthegap.com/hackathons/january-2017 "Hack the Gap")!
 
 ## About Us:
-Kosi:
+Kosi Onyeneho: PhD Candidate in Political Anthropology at Washington University in 
+St. Louis. Interested in social group formation, transparency through smart 
+contracts, and ergonomics. Aspiring professor and consultant for UI/UX design/
+User research. Fun fact: Kosi loves to sing and is a soprano 2. You can find 
+Kosi on [LinkedIn](https://www.linkedin.com/in/kosi-onyeneho "Kosi's LinkedIn") 
+and [GitHub](https://github.com/konyeneho "Kosi's GitHub").
 
 Lisa Mabley: Software Engineer at [ITM TwentyFirst](https://www.itm21st.com/ 
 "ITM TwentyFirst"). Lisa is a graphic designer-turned-coder who loves puzzles of 

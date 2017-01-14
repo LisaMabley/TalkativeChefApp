@@ -1,0 +1,10 @@
+SpeechRecognition.SpeechRecognition()
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+
+if (!('webkitSpeechRecognition' in window)) {
+  upgrade();
+} else {
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;

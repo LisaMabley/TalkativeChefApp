@@ -5,11 +5,10 @@
 	<link rel="stylesheet" href="/public/vendors/bootstrap.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Amatica+SC:700|Londrina+Outline|Ribeye+Marrow" rel="stylesheet">
 	<link rel="stylesheet" href="/public/styles/style.css" />
-
-	<script type="text/javascript" src="/public/vendors/angular.min.js"></script>
+  <script type="text/javascript" src="/public/vendors/angular.min.js"></script>
 	<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
-
 </head>
+
 <body class="container-fluid" ng-app='myApp'>
 	<h1>The Talkative Chef<small> the hurr-de-hurr swede</small></h1>
 	<div class="form-group col-xs-8 col-xs-offset-2">
@@ -19,13 +18,12 @@
 	</div>
 	<div id="searchResultsContainer" ng-show="results">
     <div class="search-results" ng-repeat="result in results">
-      <img src="{{result.}}" />something
-      <h2 class="result-title">{{result.}}</h2>
-      <h4 class="result-desc">{{result.}}</h4>
+      <img src=  "{{result}}" />something
+      <h2 class="result-title">{{result}}</h2>
+      <h4 class="result-desc">{{result}}</h4>
       <button class="btn btn-success">Something</button>
+      <button class="btn btn-success">Voice Testing</button>
     </div>
 	</div>
-
 </body>
-
 </html>

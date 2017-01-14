@@ -7,7 +7,10 @@ Talkative Chef will walk you through the recipe so that you can focus on what's
 in front of you.
 
 Talkative Chef is a collaborative project created during the 3rd annual Hack the 
-Gap event. 
+Gap event. Hack the Gap is a two-day hackathon aimed at creating a high-energy 
+weekend where women from all backgrounds and experience levels can enjoy an 
+accessible, approachable, positive experience. Check out [Hack the Gap](
+http://www.hackthegap.com/hackathons/january-2017 "Hack the Gap")!
 
 ## About Us:
 Kosi:
@@ -18,8 +21,10 @@ all kinds. You can find Lisa on [LinkedIn](
 https://www.linkedin.com/in/lisamabley "Lisa's LinkedIn") and [GitHub](
 https://github.com/LisaMabley "Lisa's GitHub").
 
-Kim Mai: Business Intelligence Developer at C. H. Robinson. You can find Kim on 
-[LinkedIn](https://www.linkedin.com/in/kmaimn "Kim's LinkedIn")
+Kim Mai: Business Intelligence Developer at C. H. Robinson. Fun Fact: Kim's 
+stomach can make a gurgling noise on command! You can find Kim on 
+[LinkedIn](https://www.linkedin.com/in/kmaimn "Kim's LinkedIn") and [GitHub](
+https://github.com/kmaimn "Kim's GitHub")
 
 Renee Murray: Sr. Data Scientist at General Mills. PhD in Quantitative Social 
 Psychology from Iowa State University. Fun Fact: Renee is a volunteer and foster 

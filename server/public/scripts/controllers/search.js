@@ -1,11 +1,10 @@
 myApp.controller('searchController', ['$http', '$scope',function($http, $scope) {
-  //var ctrl = this;
   $scope.responseReceived = false;
 
   $scope.recipeList = [];
 
   $scope.sendRequest = function() {
-    console.log('Nice job clicking, lady!');
+    alert('Nice job clicking, lady!');
   }
 
   // var options = {

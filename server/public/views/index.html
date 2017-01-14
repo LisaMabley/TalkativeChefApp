@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>COOKING APP</title>
+	<title>The Talkative Chef</title>
 	<link rel="stylesheet" href="/public/vendors/bootstrap.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Amatica+SC:700|Londrina+Outline|Ribeye+Marrow" rel="stylesheet">
 	<link rel="stylesheet" href="/public/styles/style.css" />
@@ -15,14 +15,14 @@
 	<h1>The Talkative Chef<small> the hurr-de-hurr swede</small></h1>
 	<div ng-controller="searchController">
 		<div class="form-group col-xs-8 col-xs-offset-2">
-			<input id="recipeSearchField" name="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
+			<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
 			<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
 		</div>
 		<div id="searchResultsContainer" ng-show="responseReceived">
 	    <div class="search-results" ng-repeat="recipe in recipeList">
-	      <img src="{{result.}}" />something
-	      <h2 class="result-title">{{result.}}</h2>
-	      <h4 class="result-desc">{{result.}}</h4>
+	      <img src="{{}}" />something
+	      <h2 class="result-title">{{}}</h2>
+	      <h4 class="result-desc">{{}}</h4>
 	      <button class="btn btn-success">Something</button>
 	    </div>
 		</div>

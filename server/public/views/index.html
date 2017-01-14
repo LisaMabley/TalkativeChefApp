@@ -12,11 +12,17 @@
 
 </head>
 <body class="container-fluid" ng-app="myApp">
-	<h1>The Talkative Chef<small> the hurr-de-hurr swede</small></h1>
 	<div ng-controller="searchController">
-		<div class="form-group col-xs-8 col-xs-offset-2">
-			<input id="recipeSearchField" name="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
-			<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
+		<div id="searchBGImageContainer">
+			<div id="titleContainer" class="col-xs-offset-2">
+				<img id="searchLogo" src="/public/images/logo-white.png" />
+				<h1>The Talkative Chef<small> Hands-free recipe help</small></h1>
+			</div>
+			<div class="form-inline col-xs-8 col-xs-offset-2">
+				<input id="recipeSearchField" name="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
+				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe!</button>
+
+			</div>
 		</div>
 		<div id="searchResultsContainer" ng-show="responseReceived">
 	    <div class="search-results" ng-repeat="recipe in recipeList">

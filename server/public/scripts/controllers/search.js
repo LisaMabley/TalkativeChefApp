@@ -5,27 +5,33 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
 
   $scope.recipeSearchField = '';
 
-  $scope.sendRequest = function() {
-    console.log($scope.recipeSearchField);
-    //alert('Nice job typing, ' + $scope.recipeSearchField + ', lady!');
+  $scope.formattedTags = '';
+
+  var options = {
+    host: 'spoonacular-recipe-food-nutrition-v1.p.mashape.com',
+    path: '/recipes/random?limitLicense=false&number=20&tags=' + $scope.formattedTags,
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'X-Mashape-Key': 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz'
+    }
   }
 
-  // var options = {
-  //   host: 'spoonacular-recipe-food-nutrition-v1.p.mashape.com',
-  //   path: '/recipes/random',
-  //   method: 'GET',
-  //   headers: {
-  //       'Content-Type': 'application/json',
-  //       'X-Mashape-Key', '<required>'
-  //   }
-  // };
+  function formatTagsForApiCall(inputString) {
+    var tagList = inputString.split('');
+    for (tag in tagList) {
+      $scope.formattedTags += tag + '%2C'
+    }
+  }
 
-//?limitLicense=false&number=20&tags=
+  $scope.sendRequest = function() {
+    var tagString = 'chocolate dessert vegan';
+    formatTagsForApiCall(tagString);
+    var key = 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz';
 
-  // controller.getRecipes = function() {
-  //   $http.get('/https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search').then(function(response) {
-  //     controller.recipeList = response.data;
-  //   });
-  // }
-
+    $http.get(options).then(function(response) {
+      $scope.recipeList = response.data;
+      console.log($scope.recipeList);
+    });
+  }
 }]);

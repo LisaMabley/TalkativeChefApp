@@ -1,0 +1,36 @@
+# Outline for 'How to use Talkative Chef' page
+
+The first step is to find a recipe you are ready to make. Use our handy search
+tool to find a recipe that sounds great to you! Once you enter what you are
+looking for, we provide you with a list of top recipes relevant to your search.
+Once you've found the recipe you want to make, we recommend you start by looking
+over the ingredients list and getting out everything you will need. That way you
+won't be searching your kitchen for ingredients once you've dug in! Now that you
+are ready to start, click on the "Start Cooking!" button to start the Talkative
+Chef interactive talk experience.
+
+Talkative Chef will give you the first set of instructions. For example, "Cream
+together the butter and sugar. You need 1 pound of butter and 3/4 cup sugar."
+
+If you didn't quite catch that (or you just forget!), you can ask Talkative Chef
+for more information: For example, you can ask "Chef, how much butter did I need
+?", "Chef, can you repeat that?", or "Chef, can you repeat the step with the
+butter?" Talkative Chef will give you those instructions without you having to
+touch your device (we all get messy hands when cooking!), allowing you to focus
+on the delicious food in front of you.
+
+When you are ready to move to the next step, just let Talkative Chef know. For
+example, say "Chef, what's the next step?" or "Chef, what do I do next?"
+
+You can go back and forth with Talkative Chef as you move through your recipe as
+much as you want. For example, if you are on the third step and want to know
+what you did in the first step for some reason, you can ask Chef something like
+"Chef, what was the first step again?" or "Chef, what was the step with the
+butter?"
+
+Once you are ready to go back to where you are, just ask to go back! "Chef, go
+to the last step I was on", or "Chef, go to the most recent step I was on".
+
+When you are done, Talkative Chef will let you know (e.g., "You are all done,
+enjoy!"). If you can, please rate the recipe after you have had a chance to try
+it. This feedback is really helpful for other users like you!

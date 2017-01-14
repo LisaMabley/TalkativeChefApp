@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.1",
+    "angular-route": "^1.6.1",
     "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "pg": "^6.1.2"
   }

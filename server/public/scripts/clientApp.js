@@ -1,1 +1,1 @@
-console.log('this works');
+var var myApp = angular.module('myApp', ['ngRoute']);

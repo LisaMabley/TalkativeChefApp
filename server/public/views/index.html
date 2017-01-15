@@ -35,7 +35,9 @@
 		<div id="searchResultsContainer" ng-show="responseReceived">
 			<div class="search-results" ng-repeat="recipe in recipeList">
 				<div class="search-recipe-card" ng-click="getRecipe(recipe.id)">
-					<h5 class="result-title">{{recipe.title}}</h5>
+					<div class="cardTitle">
+						<h5 class="result-title">{{recipe.title}}</h5>
+					</div>
 					<div class="img-container fill">
 						<img class="recipe-img" ng-src="{{recipe.image}}" />
 					</div>

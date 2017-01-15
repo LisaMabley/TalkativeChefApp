@@ -8,15 +8,16 @@
 
 	<script type="text/javascript" src="/public/vendors/angular.min.js"></script>
 	<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
-	
+	<!-- <script src='https://code.responsivevoice.org/responsivevoice.js'></script> -->
+<script src='//vws.responsivevoice.com/v/e?key=SbYfl2Uy'></script>
 </head>
 
 <body class="container-fluid" ng-app='myApp'>
 	<h1>The Talkative Chef<small> the hurr-de-hurr swede</small></h1>
 	<div class="form-group col-xs-8 col-xs-offset-2">
-		<input id="recipeSearchBar" name="recipeSearchBar" placeholder="Type your search here" type="text" class="form-control" />
-		<button class="btn btn-success" ng-click="">Find Recipe!</button>
-
+	<input id="recipeSearchBar" name="recipeSearchBar" placeholder="Type your search here" type="text" class="form-control" />
+	<button class="btn btn-success" ng-click="">Find Recipe!</button>
+<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
 	</div>
 	<div id="searchResultsContainer" ng-show="results">
     <div class="search-results" ng-repeat="result in results">

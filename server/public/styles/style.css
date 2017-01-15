@@ -36,6 +36,13 @@ h1 small {
 	height: 100px;
 }
 
+#howToContainer {
+	position:absolute;
+	width:100%;
+	top:100%;
+	height: 100px;
+}
+
 #recipeSearchField {
 	display: inline-block;
 	width: calc(100% - 120px);
@@ -62,4 +69,11 @@ h1 small {
 .search-recipe-card {
 	border: 1px solid #dddddd;
 	height: 100%;
+}
+
+.false {
+	display: none;
+}
+.true {
+	display: block;
 }

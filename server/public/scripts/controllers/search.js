@@ -2,9 +2,12 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
   $scope.responseReceived = false;
   $scope.recipeList = [{title: "vegan oatmeal cookies", image: 'https://spoonacular.com/recipeImages/vegan-oatmeal-cookies--fruit-sweetened-(gluten-free-option)-630187.jpg'}];
   $scope.recipeSearchField = '';
+  $scope.hideShowTutorial = false;
+
+
   $scope.recipeFactory = RecipeFactory;
 
-  $scope.sendRequest = function() {
+  $scope.sendRequest = function(recipeSearchField) {
     var tagString = $scope.recipeSearchField;
 
     var request = {
@@ -23,7 +26,7 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
     var id = recipeId;
 
     console.log(id);
-    $scope.recipeFactory.setID(id)
+    $scope.recipeFactory.setID(id);
     //console.log($scope.recipeFactory.setID());
 
     //console.log($scope.recipeFactory.setID(id));
@@ -35,6 +38,15 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
 
     });
 
+  }
+
+  $scope.toggleTutorial = function(){
+    if ($scope.hideShowTutorial == false){
+      $scope.hideShowTutorial = true;
+    } else {
+      $scope.hideShowTutorial = false;
+    }
+    console.log($scope.hideShowTutorial);
   }
 
   function successCallback(response) {

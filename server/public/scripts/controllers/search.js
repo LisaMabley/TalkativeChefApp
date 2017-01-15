@@ -1,6 +1,7 @@
 myApp.controller('searchController', ['$http', '$scope',function($http, $scope) {
   $scope.responseReceived = false;
   $scope.recipeList = [];
+  $scope.recipe = [];
   $scope.recipeSearchField = '';
   $scope.formattedTags = '';
 
@@ -16,7 +17,7 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
   // }
 
   $scope.sendRequest = function() {
-    var tagString = 'chocolate%2Cdessert%2Cvegan';
+    var tagString = $scope.recipeSearchField;
     //formatTagsForApiCall(tagString);
 
     var request = {
@@ -29,13 +30,30 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
    };
 
     $http(request).then(successCallback, errorCallback);
+
+  }
+
+  $scope.getRecipe = function(id) {
+    var recipeId = id;
+    console.log(recipeId);
+
+    var request = {
+     method: 'GET',
+     url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + recipeId + '/information',
+     headers: {
+       'Content-Type': 'application/json',
+       'X-Mashape-Key': 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz'
+     }
+   };
+   console.log(request);
+    $http(request).then(successCallbackRecipe, errorCallback);
   }
 
   function successCallback(response) {
     $scope.recipeList = response.data.recipes;
-    console.log(response.data);
     $scope.responseReceived = true;
     console.log($scope.recipeList);
+    $scope.recipeSearchField = '';
   }
 
   function errorCallback(error) {
@@ -43,4 +61,11 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
       alert('No recipies found' + response);
     }
   }
+
+  function successCallbackRecipe(response) {
+    $scope.recipe = response.data
+    console.log($scope.recipe)
+  }
+
+
 }]);

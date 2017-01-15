@@ -23,12 +23,11 @@
 			<div class="form-inline recipe-search-bar">
 				<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
 				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
-				<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
 			</div>
 		</div>
 
 		<input type="btn btn-success" value="Start" onclick="speech()" />
-		<input type="button" value="Start" onClick="speech()">	
+		<input type="button" value="Start" onClick="speech()">
 		<div id="recipe-container">
 			<div>
 				<!-- <img src="{{recipeList.image}}"/> -->
@@ -41,9 +40,9 @@
 				<ul ng-repeat="step in steps">
 					<p>{{step.step}}</p>
 				</ul>
-			</div>	
+			</div>
 		</div>
 	</div>
-	
+
 </body>
 </html>

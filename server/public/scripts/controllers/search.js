@@ -1,26 +1,14 @@
 myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFactory', function($http, $scope, $window, RecipeFactory) {
   $scope.responseReceived = false;
   $scope.recipeList = [];
-  $scope.recipe = [];
   $scope.recipeSearchField = '';
-  $scope.formattedTags = '';
+  $scope.hideShowTutorial = false;
+
 
   $scope.recipeFactory = RecipeFactory;
 
-  // function formatTagsForApiCall(inputString) {
-  //   var tagList = inputString.split('');
-  //   if (tagList.length > 1) {
-  //     for (tag in tagList) {
-  //       $scope.formattedTags += tag + '%2C'
-  //     }
-  //   } else {
-  //     $scope.formattedTags = inputString;
-  //   }
-  // }
-
   $scope.sendRequest = function(recipeSearchField) {
     var tagString = $scope.recipeSearchField;
-    //formatTagsForApiCall(tagString);
 
     var request = {
      method: 'GET',
@@ -32,9 +20,7 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
    };
 
     $http(request).then(successCallback, errorCallback);
-
   }
-
 
   $scope.getRecipe = function(recipeId){
     var id = recipeId;
@@ -52,7 +38,6 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
 
     });
 
-    
   }
   // $scope.getRecipe = function(id) {
   //   var recipeId = id;
@@ -71,9 +56,18 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
 
   // };
 
+  $scope.toggleTutorial = function(){
+    if ($scope.hideShowTutorial == false){
+      $scope.hideShowTutorial = true;
+    } else {
+      $scope.hideShowTutorial = false;
+    }
+    console.log($scope.hideShowTutorial);
+  }
 
   function successCallback(response) {
     $scope.recipeList = response.data.recipes;
+    console.log(response.data);
     $scope.responseReceived = true;
     console.log($scope.recipeList);
     $scope.recipeSearchField = '';
@@ -93,6 +87,5 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
   //   //$window.location.href = '/public/views/recipe.html'
   //   console.log('recipe:',$scope.steps);
   // }
-
 
 }]);

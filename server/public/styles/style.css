@@ -118,3 +118,18 @@ h1 small {
 	vertical-align: middle;
 	height:100%;
 }
+.half-page {
+	display: inline-block;
+	width:45%;
+	vertical-align: top;
+}
+.half-page img {
+	width:100%;
+}
+.instruction-container {
+	max-width:80%;
+}
+
+#recipe-container {
+	padding:25px;
+}

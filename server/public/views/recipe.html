@@ -29,14 +29,19 @@
 		<input type="btn btn-success" value="Start" onclick="speech()" />
 		<input type="button" value="Start" onClick="speech()">
 		<div id="recipe-container">
+			<h3>{{recipeList.title}}</h3>
 			<div>
-				<!-- <img src="{{recipeList.image}}"/> -->
-				<ul ng-repeat="ingredient in recipeList.extendedIngredients">
-					<p>{{ingredient.originalString}}</p>
-				</ul>
+				<h5>Ingredients:</h5>
+				<div class="half-page">
+					<ul ng-repeat="ingredient in recipeList.extendedIngredients">
+						<p>{{ingredient.originalString}}</p>
+					</ul>
+				</div>
+				<div class="half-page"><img src="{{recipeList.image}}"/></div>
 			</div>
-			<h5>{{recipeList.title}}</h5>
-			<div>
+
+			<div class="instruction-container">
+				<h5>Instructions:</h5>
 				<ul ng-repeat="step in steps">
 					<p>{{step.step}}</p>
 				</ul>

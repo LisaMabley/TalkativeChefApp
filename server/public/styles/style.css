@@ -44,3 +44,16 @@ h1 small {
 	display: inline-block;
 	width: calc(100% - 120px);
 }
+
+.recipe-img {
+	width: 300px;
+	height: 300px;
+
+}
+
+.search-results {
+	margin-top: 10px;
+	display: inline-block;
+	width: 25%;
+	height: 400px;
+}

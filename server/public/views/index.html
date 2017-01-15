@@ -28,10 +28,10 @@
 		</div>
 		<div id="searchResultsContainer" ng-show="responseReceived">
 	    <div class="search-results" ng-repeat="recipe in recipeList">
-	      <img src="{{}}" />something
-	      <h2 class="result-title">{{}}</h2>
-	      <h4 class="result-desc">{{}}</h4>
-	      <button class="btn btn-success">Something</button>
+	      <img class="recipe-img" ng-src="{{recipe.image}}" />
+	      <h4 class="result-title">{{recipe.title}}</h4>
+	      <!-- <h4 class="result-desc">{{}}</h4> -->
+	      <button class="btn btn-success">More Info</button>
 	    </div>
 		</div>
 	</div>

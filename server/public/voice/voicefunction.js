@@ -71,7 +71,9 @@ recognition.onresult = function(event) {
     // command.
     // //s/  +/ /g;
     if(command.toLowerCase() == v.toLowerCase()){
-      console.log("Next Step");}
+      responsiveVoice.speak("Heat oven to 275 degrees Fahrenheit, then toast pecans and walnuts");
+      recognizing = false;
+      recognition.stop();}
       else{
       console.log(command);
       return;

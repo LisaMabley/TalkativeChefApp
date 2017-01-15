@@ -30,7 +30,7 @@ function sendRequest () {
             console.log('req:',request);
             console.log('resp:',response);
             $scope.recipeList = response.data;
-            console.log($scope.recipeList);
+            console.log($scope.recipeList.extendedIngredients);
   });
 }
 

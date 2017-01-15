@@ -18,7 +18,7 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
   //   }
   // }
 
-  $scope.sendRequest = function() {
+  $scope.sendRequest = function(recipeSearchField) {
     var tagString = $scope.recipeSearchField;
     //formatTagsForApiCall(tagString);
 
@@ -40,7 +40,7 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
     var id = recipeId;
 
     console.log(id);
-    $scope.recipeFactory.setID(id)
+    $scope.recipeFactory.setID(id);
     //console.log($scope.recipeFactory.setID());
 
     //console.log($scope.recipeFactory.setID(id));

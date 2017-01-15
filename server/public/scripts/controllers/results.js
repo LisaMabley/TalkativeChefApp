@@ -2,9 +2,7 @@ myApp.controller('resultsController', ['$http', '$scope', '$window', 'RecipeFact
 
 $scope.recipeFactory = RecipeFactory;
 
-var id = window.location.href.slice(50);
-
-
+var id = 630187;
 
     console.log(id);
     $scope.recipeFactory.setID(id)
@@ -12,8 +10,46 @@ var id = window.location.href.slice(50);
     $scope.recipeFactory.getRecipeFactory().then(function(repsonse){
       $scope.steps = $scope.recipeFactory.recipeSteps();
       console.log($scope.recipeFactory.recipeSteps());
+
+    sendRequest();  
+    console.log()
+
   	});
 
 
+function sendRequest () {
+    //formatTagsForApiCall(tagString);
 
+    var request = {
+     method: 'GET',
+     url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/'+ id +'/information',
+     headers: {
+       'Content-Type': 'application/json',
+       'X-Mashape-Key': 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz'
+     }
+   };
+
+    $http(request).then(
+        function(response) {
+            console.log('req:',request);
+            console.log('resp:',response);  
+            $scope.recipeList = response.data;
+            console.log($scope.recipeList);
+  });
+}
+
+function successCallback(response) {
+    $scope.recipeList = response.data.recipes;
+    $scope.responseReceived = true;
+    //console.log($scope.recipeList);
+    $scope.recipeSearchField = '';
+    window.recipeList = $scope.recipeList;
+
+  }
+
+function errorCallback(error) {
+    if (error) {
+      alert('No recipies found' + response);
+    }
+  }
 }]);

@@ -29,13 +29,17 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
    };
 
     $http(request).then(successCallback, errorCallback);
-  }
+  };
 
   function successCallback(response) {
-    $scope.recipeList = response.data;
+    $scope.recipeList = response.data.recipes;
+    console.log(response.data);
     $scope.responseReceived = true;
     console.log($scope.recipeList);
+    window.recipeList = $scope.recipeList;
   }
+
+
 
   function errorCallback(error) {
     if (error) {

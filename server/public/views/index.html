@@ -5,12 +5,13 @@
 	<link rel="stylesheet" href="/public/vendors/bootstrap.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Amatica+SC:700|Londrina+Outline|Ribeye+Marrow" rel="stylesheet">
 	<link rel="stylesheet" href="/public/styles/style.css" />
-
-	<script type="text/javascript" src="/public/vendors/angular.min.js"></script>
+  <script type="text/javascript" src="/public/vendors/angular.min.js"></script>
 	<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
-	<script type="text/javascript" src="/public/scripts/controllers/search.js"></script>
-
+  <script type="text/javascript" src="/public/scripts/controllers/search.js"></script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<!-- <script src='//vws.responsivevoice.com/v/e?key=SbYfl2Uy'></script> -->
 </head>
+
 <body class="container-fluid" ng-app="myApp">
 	<div ng-controller="searchController">
 		<div id="searchBGImageContainer">
@@ -20,20 +21,19 @@
 			</div>
 			<div class="form-inline col-xs-8 col-xs-offset-2">
 				<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
-				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe!</button>
+				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
+				<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
 
 			</div>
 		</div>
 		<div id="searchResultsContainer" ng-show="responseReceived">
 	    <div class="search-results" ng-repeat="recipe in recipeList">
-	      <img src="{{}}" />something
-	      <h2 class="result-title">{{}}</h2>
-	      <h4 class="result-desc">{{}}</h4>
-	      <button class="btn btn-success">Something</button>
+	      <img class="recipe-img" ng-src="{{recipe.image}}" />
+	      <h4 class="result-title">{{recipe.title}}</h4>
+	      <!-- <h4 class="result-desc">{{}}</h4> -->
+	      <button class="btn btn-success">More Info</button>
 	    </div>
 		</div>
 	</div>
-
 </body>
-
 </html>

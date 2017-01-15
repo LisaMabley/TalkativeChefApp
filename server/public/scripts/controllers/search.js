@@ -2,24 +2,10 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
   $scope.responseReceived = false;
   $scope.recipeList = [];
   $scope.recipeSearchField = '';
-  $scope.formattedTags = '';
-
   $scope.recipeFactory = RecipeFactory;
 
-  // function formatTagsForApiCall(inputString) {
-  //   var tagList = inputString.split('');
-  //   if (tagList.length > 1) {
-  //     for (tag in tagList) {
-  //       $scope.formattedTags += tag + '%2C'
-  //     }
-  //   } else {
-  //     $scope.formattedTags = inputString;
-  //   }
-  // }
-
   $scope.sendRequest = function() {
-    var tagString = 'chocolate%2Cdessert%2Cvegan';
-    //formatTagsForApiCall(tagString);
+    var tagString = $scope.recipeSearchField;
 
     var request = {
      method: 'GET',
@@ -31,9 +17,7 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
    };
 
     $http(request).then(successCallback, errorCallback);
-
   }
-
 
   $scope.getRecipe = function(recipeId){
     var id = recipeId;
@@ -50,7 +34,6 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
       $window.location.href = '/public/views/recipe.html?id='+id
 
     });
-
 
   }
   // $scope.getRecipe = function(id) {

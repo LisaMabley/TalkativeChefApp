@@ -38,9 +38,9 @@ commands.forEach(function(v, i, a){
 //hints.innerHTML = 'Tap/click then say a color to change the background color of the app. Try '+ colorHTML + '.';
 
 speech = function(){
-  recognition.start();
+  responsiveVoice.speak("Let me know when you're ready. You can say first step     ");
   recognizing = true;
-  responsiveVoice.speak("Let me know when you're ready. You can say first step");
+  recognition.start();
   console.log('Ready to receive a command.');
 
 }

@@ -40,7 +40,7 @@ speech = function(){
   responsiveVoice.speak("Let me know when you're ready. You can say first step");
   console.log('Ready to receive a command.');
 
-}
+};
 
 recognition.onresult = function(event) {
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
@@ -54,13 +54,15 @@ recognition.onresult = function(event) {
 
   var last = event.results.length - 1;
   var command = event.results[last][0].transcript;
+  var instructions = steps;
+  console.log( 'scope stpes:' + steps);
 
   //this is where we will call on the app to read the recipe
   commands.forEach(function(v, i, a){
     if(command.toLowerCase() == v.toLowerCase()){
       console.log("Next Step");}
       else{
-      console.log("Still checking");
+      console.log(command);
     }
 });
 //check that what we said is one of the recognized commands
@@ -69,19 +71,19 @@ recognition.onresult = function(event) {
 //  bg.style.backgroundColor = color;
   //console.log('Confidence: ' + event.results[0][0].confidence);
   //console.log(command);
-}
+};
 
 
 recognition.onspeechend = function() {
   recognition.stop();
-}
+};
 
 recognition.onnomatch = function(event) {
   diagnostic.textContent = "I didn't recognise that message.";
   //reset();
-}
+};
 
 recognition.onerror = function(event) {
   diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
   //recognition.stop();
-}
+};

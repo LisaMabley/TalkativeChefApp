@@ -34,11 +34,11 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
     $scope.recipeFactory.getRecipeFactory().then(function(repsonse){
       $scope.steps = $scope.recipeFactory.recipeSteps();
       console.log($scope.recipeFactory.recipeSteps());
-      $window.location.href = '/public/views/recipe.html?id='+id
+      $window.location.href = '/public/views/recipe.html?id='+id;
 
     });
 
-  }
+  };
   // $scope.getRecipe = function(id) {
   //   var recipeId = id;
   //   console.log(recipeId);

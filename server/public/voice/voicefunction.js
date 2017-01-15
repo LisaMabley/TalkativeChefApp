@@ -5,7 +5,8 @@ var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEv
 
 var commands = [ "next step", " next step", "next step ", "what's the next step", " what's the next step", "what's the next step ",
 "first step", " first step", "first step ", "first first", "firs step", " firs step", "firs step ", "next", " next", "next ",
-"first", " first", "first ", "step", " step", "step ", "firs", " firs", "firs ", "nex", " nex", "nex "];
+"first", " first", "first ", "step", " step", "step ", "firs", " firs", "firs ", "nex", " nex", "nex ", "next next", " next next",
+"next next "];
 var grammar = '#JSGF V1.0; grammar commands; public <next> = ' + commands.join(' | ') + ' ;';
 
 var recognition = new SpeechRecognition();

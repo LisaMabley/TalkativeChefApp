@@ -2,6 +2,9 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
   $scope.responseReceived = false;
   $scope.recipeList = [];
   $scope.recipeSearchField = '';
+  $scope.hideShowTutorial = false;
+
+
   $scope.recipeFactory = RecipeFactory;
 
   $scope.sendRequest = function() {
@@ -52,6 +55,15 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
   //   $http(request).then(successCallbackRecipe, errorCallback);
 
   // };
+
+  $scope.toggleTutorial = function(){
+    if ($scope.hideShowTutorial == false){
+      $scope.hideShowTutorial = true;
+    } else {
+      $scope.hideShowTutorial = false;
+    }
+    console.log($scope.hideShowTutorial);
+  }
 
   function successCallback(response) {
     $scope.recipeList = response.data.recipes;

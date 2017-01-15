@@ -38,9 +38,9 @@ commands.forEach(function(v, i, a){
 //hints.innerHTML = 'Tap/click then say a color to change the background color of the app. Try '+ colorHTML + '.';
 
 speech = function(){
-  recognition.start();
+  responsiveVoice.speak("Let me know when you're ready.");
   recognizing = true;
-  responsiveVoice.speak("Let me know when you're ready. You can say first step");
+  recognition.start();
   console.log('Ready to receive a command.');
 
 }
@@ -71,7 +71,9 @@ recognition.onresult = function(event) {
     // command.
     // //s/  +/ /g;
     if(command.toLowerCase() == v.toLowerCase()){
-      console.log("Next Step");}
+      responsiveVoice.speak("Heat oven to 275 degrees Fahrenheit, then toast pecans and walnuts");
+      recognizing = false;
+      recognition.stop();}
       else{
       console.log(command);
       return;

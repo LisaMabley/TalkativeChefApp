@@ -23,7 +23,6 @@
 			<div class="form-inline col-xs-8 col-xs-offset-2">
 				<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
 				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
-				<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
 
         <a href="/public/views/recipe.html">click</a>
 				<div id="howToLink" ng-click="toggleTutorial()">
@@ -35,9 +34,10 @@
 		<div id="searchResultsContainer" ng-show="responseReceived">
 			<div class="search-results" ng-repeat="recipe in recipeList">
 				<div class="search-recipe-card" ng-click="getRecipe(recipe.id)">
-					<h5 class="result-title">{{recipe.title}}</h5>
-					<!-- <h4 class="result-desc">{{}}</h4> -->
-					<div class="img-container">
+					<div class="cardTitle">
+						<h5 class="result-title">{{recipe.title}}</h5>
+					</div>
+					<div class="img-container fill">
 						<img class="recipe-img" ng-src="{{recipe.image}}" />
 					</div>
 				</div>

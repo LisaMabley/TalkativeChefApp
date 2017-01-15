@@ -50,25 +50,45 @@ h1 small {
 
 .img-container {
 	vertical-align: bottom;
-	height: 275px;
+	height: 225px;
 	overflow: hidden;
 }
 
 .recipe-img {
-	height: 100%;
+	width: 100%;
 }
+
+.fill {
+	object-fit: contain;
+}
+
+/*.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}*/
 
 .search-results {
 	display: inline-block;
 	width: 25%;
-	height: 400px;
+	height: 350px;
 	padding: 10px;
 	vertical-align: top;
 }
 
 .search-recipe-card {
 	border: 1px solid #dddddd;
-	height: 100%;
+	height: 250px;
+}
+
+.cardTitle {
+	height: 40px;
 }
 
 .false {

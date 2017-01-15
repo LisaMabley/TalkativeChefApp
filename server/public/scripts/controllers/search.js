@@ -1,4 +1,4 @@
-myApp.controller('searchController', ['$http', '$scope',function($http, $scope) {
+myApp.controller('searchController', ['$http', '$scope', '$location', function($http, $scope, $location) {
   $scope.responseReceived = false;
   $scope.recipeList = [];
   $scope.recipe = [];
@@ -58,7 +58,7 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
     console.log($scope.recipeList);
     $scope.recipeSearchField = '';
 
-   // window.recipeList = $scope.recipeList;
+    window.recipeList = $scope.recipeList;
 
   }
 
@@ -72,6 +72,7 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
 
   function successCallbackRecipe(response) {
     $scope.recipe = response.data
+    $location.path('/recipe')
     console.log($scope.recipe)
   }
 

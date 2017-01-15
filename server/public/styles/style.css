@@ -14,12 +14,8 @@ h1 small {
 }
 
 #searchLogo {
-	width: 15%;
-	display: inline-block;
-}
-
-#titleContainer {
-	margin-top:7%;
+	width:35%;
+	margin-top: 50px;
 }
 
 #searchBGImageContainer {
@@ -27,7 +23,7 @@ h1 small {
 	position:absolute;
 	width:100%;
 	height:100%;
-	background-image:url('../images/veg-bg.jpg');
+	background-image:url('../images/cookie-bg.jpg');
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -45,15 +41,25 @@ h1 small {
 	width: calc(100% - 120px);
 }
 
-.recipe-img {
-	width: 300px;
-	height: 300px;
+.img-container {
+	vertical-align: bottom;
+	height: 275px;
+	overflow: hidden;
+}
 
+.recipe-img {
+	height: 100%;
 }
 
 .search-results {
-	margin-top: 10px;
 	display: inline-block;
 	width: 25%;
 	height: 400px;
+	padding: 10px;
+	vertical-align: top;
+}
+
+.search-recipe-card {
+	border: 1px solid #dddddd;
+	height: 100%;
 }

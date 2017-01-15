@@ -32,7 +32,8 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
   }
 
   function successCallback(response) {
-    $scope.recipeList = response.data;
+    $scope.recipeList = response.data.recipes;
+    console.log(response.data);
     $scope.responseReceived = true;
     console.log($scope.recipeList);
   }

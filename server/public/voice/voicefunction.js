@@ -3,7 +3,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-var commands = [ 'next step', "what's the next step", 'first step', 'firs step'];
+var commands = [ 'next step', "what's the next step", 'first step', 'firs step', 'next', 'first'];
 var grammar = '#JSGF V1.0; grammar commands; public <next> = ' + commands.join(' | ') + ' ;';
 
 var recognition = new SpeechRecognition();
@@ -61,8 +61,7 @@ recognition.onresult = function(event) {
       console.log("Next Step");}
       else{
       console.log("Still checking");
-    };
-  }
+    }
 });
 //check that what we said is one of the recognized commands
 

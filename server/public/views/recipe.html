@@ -8,13 +8,15 @@
 <link rel="stylesheet" href="/public/styles/style.css" />
 <script type="text/javascript" src="/public/vendors/angular.min.js"></script>
 <script type="text/javascript" src="/public/scripts/clientApp.js"></script>
+<script type="text/javascript" src="/public/scripts/factories/recipeFactory.js"></script>
 <script type="text/javascript" src="/public/scripts/controllers/search.js"></script>
+<script type="text/javascript" src="/public/scripts/controllers/results.js"></script>
 <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 <script type="text/javascript" src="/public/voice/voicefunction.js"></script>
 </head>
 <body ng-app="myApp">
-	<div ng-controller="searchController">
-		<input type="btn btn-success" value="Start" onclick="speech()" />
+	<div ng-controller="resultsController">
+	<input type="btn btn-success" value="Start" onclick="speech()" />
 		<div class="form-inline col-xs-8 col-xs-offset-2">
 					<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
 					<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
@@ -22,6 +24,9 @@
 
 		</div>
 			<input type="button" value="Start" onclick="speech()">
+	</div>
+	<div id="recipe-container">
+
 	</div>
 </body>
 </html>

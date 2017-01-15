@@ -8,7 +8,8 @@
 
 	<script type="text/javascript" src="/public/vendors/angular.min.js"></script>
 	<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
-	
+	<script type="text/javascript" src="/public/voice/voicefunction.js"></script>
+
 </head>
 
 <body class="container-fluid" ng-app='myApp'>
@@ -16,6 +17,7 @@
 	<div class="form-group col-xs-8 col-xs-offset-2">
 		<input id="recipeSearchBar" name="recipeSearchBar" placeholder="Type your search here" type="text" class="form-control" />
 		<button class="btn btn-success" ng-click="">Find Recipe!</button>
+		<input type="button" value="Start" onclick="speech()" />
 
 	</div>
 	<div id="searchResultsContainer" ng-show="results">

@@ -1,2 +1,0 @@
-//Start button
-<input type="button" value="Start" onclick="Speech()" />

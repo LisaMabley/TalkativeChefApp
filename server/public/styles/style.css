@@ -1,12 +1,46 @@
+body {
+	margin:0;
+	background-color: #ffffff;
+}
+
 h1{
 	color: #ffffff;
+	padding-left: 15px;
+	padding-bottom: 20px;
 }
 
-body {
-	background-color: #dddddd;
+h1 small {
+	color: #dddddd;
 }
 
-#searchResultsContainer {
+#searchLogo {
+	width: 15%;
 	display: inline-block;
-	
+}
+
+#titleContainer {
+	margin-top:7%;
+}
+
+#searchBGImageContainer {
+	left:0;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-image:url('../images/veg-bg.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size:cover;
+}
+#searchResultsContainer {
+	position:absolute;
+	width:100%;
+	top:100%;
+	height: 100px;
+}
+
+#recipeSearchField {
+	display: inline-block;
+	width: calc(100% - 120px);
 }

@@ -16,13 +16,18 @@
 </head>
 <body ng-app="myApp">
 	<div ng-controller="resultsController">
-		<input type="btn btn-success" value="Start" onclick="speech()" />
-			<div class="form-inline col-xs-8 col-xs-offset-2">
-						<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
-						<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
-						<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
+		<div id="recipePageHeader">
+			<div class="recipe-logo">
+				<img src="/public/images/logo-white.png" class="img-responsive" />
 			</div>
+			<div class="form-inline recipe-search-bar">
+				<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
+				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
+				<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
+			</div>
+		</div>
 
+		<input type="btn btn-success" value="Start" onclick="speech()" />
 		<input type="button" value="Start" onClick="speech()">	
 		<div id="recipe-container">
 			<div>

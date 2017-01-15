@@ -1,6 +1,6 @@
 myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFactory', function($http, $scope, $window, RecipeFactory) {
   $scope.responseReceived = false;
-  $scope.recipeList = [];
+  $scope.recipeList = [{title: "vegan oatmeal cookies", image: 'https://spoonacular.com/recipeImages/vegan-oatmeal-cookies--fruit-sweetened-(gluten-free-option)-630187.jpg'}];
   $scope.recipeSearchField = '';
   $scope.hideShowTutorial = false;
 
@@ -39,22 +39,6 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
     });
 
   }
-  // $scope.getRecipe = function(id) {
-  //   var recipeId = id;
-  //   console.log(recipeId);
-
-  //   var request = {
-  //    method: 'GET',
-  //    url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + recipeId + '/analyzedInstructions',
-  //    headers: {
-  //      'Content-Type': 'application/json',
-  //      'X-Mashape-Key': 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz'
-  //    }
-  //  };
-  //  console.log(request);
-  //   $http(request).then(successCallbackRecipe, errorCallback);
-
-  // };
 
   $scope.toggleTutorial = function(){
     if ($scope.hideShowTutorial == false){
@@ -66,26 +50,16 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
   }
 
   function successCallback(response) {
-    $scope.recipeList = response.data.recipes;
-    console.log(response.data);
+    $scope.recipeList = $scope.recipeList.concat(response.data.recipes);
     $scope.responseReceived = true;
-    console.log($scope.recipeList);
     $scope.recipeSearchField = '';
     window.recipeList = $scope.recipeList;
-
   }
 
   function errorCallback(error) {
     if (error) {
-      alert('No recipies found' + response);
+      alert('No recipies found' + error);
     }
   }
-
-  // function successCallbackRecipe(response) {
-  //   var data = response.data
-  //   $scope.steps = data[0].steps
-  //   //$window.location.href = '/public/views/recipe.html'
-  //   console.log('recipe:',$scope.steps);
-  // }
 
 }]);

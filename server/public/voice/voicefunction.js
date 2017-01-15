@@ -3,7 +3,10 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-var commands = [ 'next step', "what's the next step", 'first step', 'firs step', 'next', 'first'];
+var commands = [ "next step", " next step", "next step ", "what's the next step", " what's the next step", "what's the next step ",
+"first step", " first step", "first step ", "first first", "firs step", " firs step", "firs step ", "next", " next", "next ",
+"first", " first", "first ", "step", " step", "step ", "firs", " firs", "firs ", "nex", " nex", "nex ", "next next", " next next",
+"next next "];
 var grammar = '#JSGF V1.0; grammar commands; public <next> = ' + commands.join(' | ') + ' ;';
 
 var recognition = new SpeechRecognition();
@@ -56,11 +59,22 @@ recognition.onresult = function(event) {
   var command = event.results[last][0].transcript;
 
   //this is where we will call on the app to read the recipe
+  // while(command.toLowerCase() != v.toLowerCase()){
+  //   if(command.toLowerCase() != v.toLowerCase()){}
+  //     console.log(command)
+  //     }
+  //   }
+  // console.log("Next Step");
+  //         break;
+  //       }
   commands.forEach(function(v, i, a){
+    // command.
+    // //s/  +/ /g;
     if(command.toLowerCase() == v.toLowerCase()){
       console.log("Next Step");}
       else{
-      console.log("Still checking");
+      console.log(command);
+      return;
     }
 });
 //check that what we said is one of the recognized commands

@@ -7,18 +7,14 @@ var id = 630187;
     console.log(id);
     $scope.recipeFactory.setID(id)
 
-    $scope.recipeFactory.getRecipeFactory().then(function(repsonse){
+    $scope.recipeFactory.getRecipeFactory().then(function(response){
       $scope.steps = $scope.recipeFactory.recipeSteps();
       console.log($scope.recipeFactory.recipeSteps());
 
-    sendRequest();  
-    console.log()
-
+      sendRequest();
   	});
-
-
+    
 function sendRequest () {
-    //formatTagsForApiCall(tagString);
 
     var request = {
      method: 'GET',
@@ -32,7 +28,7 @@ function sendRequest () {
     $http(request).then(
         function(response) {
             console.log('req:',request);
-            console.log('resp:',response);  
+            console.log('resp:',response);
             $scope.recipeList = response.data;
             console.log($scope.recipeList.extendedIngredients);
   });
@@ -41,10 +37,8 @@ function sendRequest () {
 function successCallback(response) {
     $scope.recipeList = response.data.recipes;
     $scope.responseReceived = true;
-    //console.log($scope.recipeList);
     $scope.recipeSearchField = '';
     window.recipeList = $scope.recipeList;
-
   }
 
 function errorCallback(error) {

@@ -6,10 +6,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Amatica+SC:700|Londrina+Outline|Ribeye+Marrow" rel="stylesheet">
 	<link rel="stylesheet" href="/public/styles/style.css" />
   <script type="text/javascript" src="/public/vendors/angular.min.js"></script>
-	<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
+  <script type="text/javascript" src="/public/scripts/clientApp.js"></script>
+  <script type="text/javascript" src="/public/scripts/factories/recipeFactory.js"></script>
   <script type="text/javascript" src="/public/scripts/controllers/search.js"></script>
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-<script type="text/javascript" src="/public/voice/voicefunction.js"></script>
+  <script type="text/javascript" src="/public/scripts/controllers/results.js"></script>
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+  <script type="text/javascript" src="/public/voice/voicefunction.js"></script>
 	<!-- <script src='//vws.responsivevoice.com/v/e?key=SbYfl2Uy'></script> -->
 </head>
 
@@ -24,7 +26,7 @@
 				<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
 				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
 				<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
-
+        <a href="/public/views/recipe.html">click</a>
 			</div>
 		</div>
 		<div id="searchResultsContainer" ng-show="responseReceived">
@@ -35,6 +37,9 @@
 	      <button class="btn btn-success" ng-click="getRecipe(recipe.id)">More Info</button>
 	    </div>
 		</div>
+    <div ng-repeat="step in recipe">
+      {{step.step}}
+    </div>
 	</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFactory', function($http, $scope, $window, RecipeFactory) {
   $scope.responseReceived = false;
-  $scope.recipeList = [{title: "vegan oatmeal cookies", image: 'https://spoonacular.com/recipeImages/vegan-oatmeal-cookies--fruit-sweetened-(gluten-free-option)-630187.jpg'}];
+  $scope.recipeList = [{title: "vegan oatmeal cookies", id: 630187, image: 'https://spoonacular.com/recipeImages/vegan-oatmeal-cookies--fruit-sweetened-(gluten-free-option)-630187.jpg'}];
   $scope.recipeSearchField = '';
   $scope.hideShowTutorial = false;
 
@@ -20,6 +20,8 @@ myApp.controller('searchController', ['$http', '$scope', '$window', 'RecipeFacto
    };
 
     $http(request).then(successCallback, errorCallback);
+    $scope.hideShowTutorial = false;
+
   }
 
   $scope.getRecipe = function(recipeId){

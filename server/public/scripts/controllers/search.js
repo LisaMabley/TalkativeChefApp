@@ -21,7 +21,7 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
 
     var request = {
      method: 'GET',
-     url: '/spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=20&tags=' + tagString,
+     url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=20&tags=' + tagString,
      headers: {
        'Content-Type': 'application/json',
        'X-Mashape-Key': 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz'
@@ -31,13 +31,15 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
     $http(request).then(successCallback, errorCallback);
   }
 
-  function successCallback() {
+  function successCallback(response) {
     $scope.recipeList = response.data;
     $scope.responseReceived = true;
     console.log($scope.recipeList);
   }
 
-  function errorCallback(response) {
-    alert('No recipies found' + response);
+  function errorCallback(error) {
+    if (error) {
+      alert('No recipies found' + response);
+    }
   }
 }]);

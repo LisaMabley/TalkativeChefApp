@@ -40,7 +40,7 @@ h1 small {
 	height: 100px;
 }
 
-#recipeSearchBar {
+#recipeSearchField {
 	display: inline-block;
 	width: calc(100% - 120px);
 }

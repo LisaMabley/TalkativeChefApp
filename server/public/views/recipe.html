@@ -25,9 +25,18 @@
 
 		<input type="button" value="Start" onClick="speech()">	
 		<div id="recipe-container">
-			<img src="{{recipeList.image}}"/>
+			<div>
+				<!-- <img src="{{recipeList.image}}"/> -->
+				<ul ng-repeat="recipe in recipeList.extendedIngredents">
+					<p>{{recipe.originalString}}</p>
+				</ul>
+			</div>
 			<h5>{{recipeList.title}}</h5>
-
+			<div>
+				<ul ng-repeat="step in steps">
+					<p>{{step.step}}</p>
+				</ul>
+			</div>	
 		</div>
 	</div>
 	

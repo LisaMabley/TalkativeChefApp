@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<title>The Talkative Chef</title>
+<link rel="stylesheet" href="/public/vendors/bootstrap.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Amatica+SC:700|Londrina+Outline|Ribeye+Marrow" rel="stylesheet">
+<link rel="stylesheet" href="/public/styles/style.css" />
+<script type="text/javascript" src="/public/vendors/angular.min.js"></script>
+<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
+<script type="text/javascript" src="/public/scripts/controllers/search.js"></script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 <script type="text/javascript" src="/public/voice/voicefunction.js"></script>
 </head>
-<body>
-<input type="button" value="Start" onclick="speech()" />
+<body ng-app="myApp">
+	<div ng-controller="searchController">
+		<input type="btn btn-success" value="Start" onclick="speech()" />
+		<div class="form-inline col-xs-8 col-xs-offset-2">
+					<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
+					<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
+					<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
 
+		</div>
+			<input type="button" value="Start" onclick="speech()">
+	</div>
 </body>
 </html>

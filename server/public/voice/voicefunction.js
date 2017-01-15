@@ -3,7 +3,7 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-var commands = [ 'next step', "what's the next step" ];
+var commands = [ 'next step', "what's the next step", 'first step', 'firs step'];
 var grammar = '#JSGF V1.0; grammar commands; public <next> = ' + commands.join(' | ') + ' ;';
 
 var recognition = new SpeechRecognition();
@@ -17,6 +17,7 @@ recognition.maxAlternatives = 1;
 
 var diagnostic = document.querySelector('.output');
 var bg = document.querySelector('html');
+var recognizing = false;
 //var hints = document.querySelector('.hints');
 
 //var commands= '';
@@ -33,9 +34,12 @@ commands.forEach(function(v, i, a){
 });
 //hints.innerHTML = 'Tap/click then say a color to change the background color of the app. Try '+ colorHTML + '.';
 
-speech = function() {
+speech = function(){
   recognition.start();
+  recognizing = true;
+  responsiveVoice.speak("Let me know when you're ready. You can say first step");
   console.log('Ready to receive a command.');
+
 }
 
 recognition.onresult = function(event) {
@@ -51,10 +55,14 @@ recognition.onresult = function(event) {
   var last = event.results.length - 1;
   var command = event.results[last][0].transcript;
 
+  //this is where we will call on the app to read the recipe
   commands.forEach(function(v, i, a){
     if(command.toLowerCase() == v.toLowerCase()){
-      console.log("Reads the next line")
-    }
+      console.log("Next Step");}
+      else{
+      console.log("Still checking");
+    };
+  }
 });
 //check that what we said is one of the recognized commands
 
@@ -64,14 +72,17 @@ recognition.onresult = function(event) {
   //console.log(command);
 }
 
+
 recognition.onspeechend = function() {
   recognition.stop();
 }
 
 recognition.onnomatch = function(event) {
-  diagnostic.textContent = "I didn't recognise that color.";
+  diagnostic.textContent = "I didn't recognise that message.";
+  //reset();
 }
 
 recognition.onerror = function(event) {
   diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
+  //recognition.stop();
 }

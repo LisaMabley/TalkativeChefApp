@@ -16,5 +16,14 @@
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "pg": "^6.1.2"
+  },
+  "permissions": {
+  "audio-capture" : {
+    "description" : "Audio capture"
+  },
+  "speech-recognition" : {
+    "description" : "Speech recognition"
   }
+},
+  "type": "privileged"
 }

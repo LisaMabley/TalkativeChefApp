@@ -5,12 +5,14 @@
 	<link rel="stylesheet" href="/public/vendors/bootstrap.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Amatica+SC:700|Londrina+Outline|Ribeye+Marrow" rel="stylesheet">
 	<link rel="stylesheet" href="/public/styles/style.css" />
-
-	<script type="text/javascript" src="/public/vendors/angular.min.js"></script>
+  <script type="text/javascript" src="/public/vendors/angular.min.js"></script>
 	<script type="text/javascript" src="/public/scripts/clientApp.js"></script>
-	<script type="text/javascript" src="/public/scripts/controllers/search.js"></script>
-
+  <script type="text/javascript" src="/public/scripts/controllers/search.js"></script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<script type="text/javascript" src="/public/voice/voicefunction.js"></script>
+	<!-- <script src='//vws.responsivevoice.com/v/e?key=SbYfl2Uy'></script> -->
 </head>
+
 <body class="container-fluid" ng-app="myApp">
 	<div ng-controller="searchController">
 		<div id="searchBGImageContainer">
@@ -20,7 +22,8 @@
 			</div>
 			<div class="form-inline col-xs-8 col-xs-offset-2">
 				<input id="recipeSearchField" name="recipeSearchField" ng-model="recipeSearchField" placeholder="Type your search here" type="text" class="form-control" />
-				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe!</button>
+				<button class="btn btn-success" ng-click="sendRequest()">Find Recipe</button>
+				<input onclick='responsiveVoice.speak("Hello World");' type='button' value='🔊 Play' />
 
 			</div>
 		</div>
@@ -33,7 +36,5 @@
 	    </div>
 		</div>
 	</div>
-
 </body>
-
 </html>

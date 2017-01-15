@@ -31,6 +31,7 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
 
     $http(request).then(successCallback, errorCallback);
 
+
   }
 
   $scope.getRecipe = function(id) {
@@ -47,14 +48,21 @@ myApp.controller('searchController', ['$http', '$scope',function($http, $scope) 
    };
    console.log(request);
     $http(request).then(successCallbackRecipe, errorCallback);
-  }
+
+  };
+
 
   function successCallback(response) {
     $scope.recipeList = response.data.recipes;
     $scope.responseReceived = true;
     console.log($scope.recipeList);
     $scope.recipeSearchField = '';
+
+   // window.recipeList = $scope.recipeList;
+
   }
+
+
 
   function errorCallback(error) {
     if (error) {

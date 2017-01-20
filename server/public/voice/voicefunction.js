@@ -1,3 +1,9 @@
+//new angular stuff
+myApp.controller('resultsController', ['$http', '$scope', '$window', 'RecipeFactory', function($http, $scope, $window, RecipeFactory) {
+
+//new angular stuff; sets id of the oatmeal cookie; connect to factory which sort of doesn't matter with setting the ID;
+$scope.recipeFactory = RecipeFactory;
+var id = 630187;
 
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
@@ -9,6 +15,10 @@ var commands = [ "next step", " next step", "next step ", "what's the next step"
 "next next "];
 var grammar = '#JSGF V1.0; grammar commands; public <next> = ' + commands.join(' | ') + ' ;';
 
+var diagnostic = document.querySelector('.output');
+var bg = document.querySelector('html');
+var recognizing = false;
+
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
@@ -18,9 +28,18 @@ recognition.lang = 'en-US';
 recognition.interimResults = true;
 recognition.maxAlternatives = 1;
 
-var diagnostic = document.querySelector('.output');
-var bg = document.querySelector('html');
-var recognizing = false;
+//if you want this to initialize on page load to results.html, the function will have to be rewritten as: 
+// speech();
+// function speech(){
+//   responsiveVoice.speak("Let me know when you're ready.");
+//   recognizing = true;
+//   recognition.start();
+//   console.log('Ready to receive a command.');
+// }
+
+
+
+
 //var hints = document.querySelector('.hints');
 
 //var commands= '';
@@ -45,6 +64,27 @@ speech = function(){
 
 }
 
+//setter for the factory; might not be necessary right now;
+$scope.recipeFactory.setID(id)
+
+//intialize an empty array to hold ingredients;
+var text = [];
+
+//uses the factory to call the API
+$scope.recipeFactory.getRecipeFactory().then(function(response){
+  $scope.steps = $scope.recipeFactory.recipeSteps();
+  //console.log($scope.steps);
+  //loop through the returned array and pull out the directions;
+  $scope.steps.forEach(
+    function(step, index){
+      //push to array;
+      text.push(step.step);
+    });
+  console.log(text);
+});
+
+
+
 recognition.onresult = function(event) {
   // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
   // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
@@ -57,6 +97,7 @@ recognition.onresult = function(event) {
 
   var last = event.results.length - 1;
   var command = event.results[last][0].transcript;
+
 
   //this is where we will call on the app to read the recipe
   // while(command.toLowerCase() != v.toLowerCase()){
@@ -71,7 +112,7 @@ recognition.onresult = function(event) {
     // command.
     // //s/  +/ /g;
     if(command.toLowerCase() == v.toLowerCase()){
-      responsiveVoice.speak("Heat oven to 275 degrees Fahrenheit, then toast pecans and walnuts");
+      responsiveVoice.speak(text[0]);
       recognizing = false;
       recognition.stop();}
       else{
@@ -101,3 +142,5 @@ recognition.onerror = function(event) {
   diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
   //recognition.stop();
 }
+
+}]);

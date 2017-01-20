@@ -19,8 +19,8 @@ var request = function() {
    };
    var promise = $http(request).then(
       function(response) {
-        console.log('req:',request);
-        console.log('resp',response);
+        //console.log('req:',request);
+        //console.log('resp',response);
         returnResults = response.data;
       });
    
@@ -44,8 +44,8 @@ var findRecipe = function() {
     };  
     var promise = $http(request).then(
         function(response) {
-            console.log('req:',request);
-            console.log('resp:',response);  
+            //console.log('req:',request);
+            //console.log('resp:',response);  
             recipeResult = response.data[0].steps;
         });
 

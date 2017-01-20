@@ -4,12 +4,12 @@ $scope.recipeFactory = RecipeFactory;
 
 var id = 630187;
 
-    console.log(id);
+    //console.log(id);
     $scope.recipeFactory.setID(id)
 
     $scope.recipeFactory.getRecipeFactory().then(function(response){
       $scope.steps = $scope.recipeFactory.recipeSteps();
-      console.log($scope.recipeFactory.recipeSteps());
+      //console.log($scope.recipeFactory.recipeSteps());
 
       sendRequest();
   	});
@@ -27,10 +27,10 @@ function sendRequest () {
 
     $http(request).then(
         function(response) {
-            console.log('req:',request);
-            console.log('resp:',response);
+            //console.log('req:',request);
+            //console.log('resp:',response);
             $scope.recipeList = response.data;
-            console.log($scope.recipeList.extendedIngredients);
+            //console.log($scope.recipeList.extendedIngredients);
   });
 }
 

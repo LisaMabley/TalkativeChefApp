@@ -64,7 +64,7 @@ speech = function(){
 
 }
 
-//setter for the factory; might not be necessary right now;
+//setter for the factory to pull the correct id; 
 $scope.recipeFactory.setID(id)
 
 //intialize an empty array to hold ingredients;

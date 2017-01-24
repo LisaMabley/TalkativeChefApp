@@ -65,11 +65,12 @@ speech = function(){
 }
 
 //setter for the factory to pull the correct id; 
-$scope.recipeFactory.setID(id)
+$scope.recipeFactory.setID(id);
 
 //intialize an empty array to hold ingredients;
 var text = [];
-
+var paragraph = '';
+var sentence = [];
 //uses the factory to call the API
 $scope.recipeFactory.getRecipeFactory().then(function(response){
   $scope.steps = $scope.recipeFactory.recipeSteps();
@@ -80,9 +81,12 @@ $scope.recipeFactory.getRecipeFactory().then(function(response){
       //push to array;
       text.push(step.step);
     });
-  console.log(text);
-});
+  //console.log(text.join());
+  paragraph = text.join();
+  sentence = paragraph.split('.')
+  console.log(sentence);
 
+});
 
 
 recognition.onresult = function(event) {
@@ -112,10 +116,10 @@ recognition.onresult = function(event) {
     // command.
     // //s/  +/ /g;
     if(command.toLowerCase() == v.toLowerCase()){
-      responsiveVoice.speak(text[0]);
-      recognizing = false;
-      recognition.stop();}
-      else{
+      responsiveVoice.speak(sentence[0]);
+      //recognizing = false;
+      recognition.stop();
+    }else{
       console.log(command);
       return;
     }

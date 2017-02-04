@@ -9,10 +9,12 @@ var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
-var commands = [ "next step", " next step", "next step ", "what's the next step", " what's the next step", "what's the next step ",
-"first step", " first step", "first step ", "first first", "firs step", " firs step", "firs step ", "next", " next", "next ",
-"first", " first", "first ", "step", " step", "step ", "firs", " firs", "firs ", "nex", " nex", "nex ", "next next", " next next",
-"next next "];
+// var commands = [ "next step", " next step", "next step ", "what's the next step", " what's the next step", "what's the next step ",
+// "first step", " first step", "first step ", "first first", "firs step", " firs step", "firs step ", "next", " next", "next ",
+// "first", " first", "first ", "step", " step", "step ", "firs", " firs", "firs ", "nex", " nex", "nex ", "next next", " next next",
+// "next next "];
+
+var commands = ["first"];
 var grammar = '#JSGF V1.0; grammar commands; public <next> = ' + commands.join(' | ') + ' ;';
 
 var diagnostic = document.querySelector('.output');
@@ -29,13 +31,13 @@ recognition.interimResults = true;
 recognition.maxAlternatives = 1;
 
 //if you want this to initialize on page load to results.html, the function will have to be rewritten as: 
-// speech();
-// function speech(){
-//   responsiveVoice.speak("Let me know when you're ready.");
-//   recognizing = true;
-//   recognition.start();
-//   console.log('Ready to receive a command.');
-// }
+speech();
+function speech(){
+  responsiveVoice.speak("Let me know when you're ready.");
+  recognizing = true;
+  recognition.start();
+  console.log('Ready to receive a command.');
+}
 
 
 
@@ -56,13 +58,13 @@ commands.forEach(function(v, i, a){
 });
 //hints.innerHTML = 'Tap/click then say a color to change the background color of the app. Try '+ colorHTML + '.';
 
-speech = function(){
-  responsiveVoice.speak("Let me know when you're ready.");
-  recognizing = true;
-  recognition.start();
-  console.log('Ready to receive a command.');
+// speech = function(){
+//   responsiveVoice.speak("Let me know when you're ready.");
+//   recognizing = true;
+//   recognition.start();
+//   console.log('Ready to receive a command.');
 
-}
+// }
 
 //setter for the factory to pull the correct id; 
 $scope.recipeFactory.setID(id);
@@ -118,11 +120,13 @@ recognition.onresult = function(event) {
     if(command.toLowerCase() == v.toLowerCase()){
       responsiveVoice.speak(sentence[0]);
       //recognizing = false;
-      recognition.stop();
+      //recognition.stop();
     }else{
       console.log(command);
-      return;
+      //return;
     }
+
+
 });
 //check that what we said is one of the recognized commands
 

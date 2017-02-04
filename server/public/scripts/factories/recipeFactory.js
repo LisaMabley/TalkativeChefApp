@@ -14,13 +14,13 @@ var request = function() {
      url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=20&tags=' + tagString,
      headers: {
        'Content-Type': 'application/json',
-       'X-Mashape-Key': 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz'
+       'X-Mashape-Key': 'SQ10bf0CXymshkdJgwkErfFdYGT4p14N1aUjsnHZ8npfsZOeJD'
      }
    };
    var promise = $http(request).then(
       function(response) {
-        //console.log('req:',request);
-        //console.log('resp',response);
+        console.log('req:',request);
+        console.log('resp',response);
         returnResults = response.data;
       });
    
@@ -39,13 +39,13 @@ var findRecipe = function() {
       url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + recipeId + '/analyzedInstructions',
       headers: {
         'Content-Type': 'application/json',
-        'X-Mashape-Key': 'Czdsaz3b8EmshGAOdyDx3GuIQ9VAp1zfhlUjsnPkiqcbwNqMUz'
+        'X-Mashape-Key': 'SQ10bf0CXymshkdJgwkErfFdYGT4p14N1aUjsnHZ8npfsZOeJD'
       }
     };  
     var promise = $http(request).then(
         function(response) {
-            //console.log('req:',request);
-            //console.log('resp:',response);  
+            console.log('req:',request);
+            console.log('resp:',response);  
             recipeResult = response.data[0].steps;
         });
 
